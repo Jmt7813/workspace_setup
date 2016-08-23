@@ -1,0 +1,15 @@
+#!/usr/bin/env osascript
+
+on run argv
+	tell application (item 1 of argv)
+		activate
+		
+		tell application "System Events"
+			tell front window of (first process whose frontmost is true)
+				-- get value of attribute "AXFullScreen" -- for toggling, uncomment this line
+				set value of attribute "AXFullScreen" to true -- for toggling, replace true with (not result)
+			end tell
+		end tell
+    
+	end tell
+end run
